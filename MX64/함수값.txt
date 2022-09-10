@@ -1,0 +1,29 @@
+BAUDRATE=1000000 (백만)
+------------------------------------
+MX64객체 만들기 -> MX64(ID)
+ex) mx_1=MX64(1)
+------------------------------------
+MX64객체의 method 리스트
+set_torque_limit(val) : 토크제한 해제 , 값 0~1023
+movingspeed(speed) : 이동속도 설정. joint모드일시 값 0~1023, 
+		      wheel모드일시 0~2047, 0~1023 반시계,1024~2047 시계방향
+
+led(val) : LED 키고 끄기. val 이 0이면 끄고 1이면 켠다.
+set_acceleration(val) : 가속도 설정 , 값 0~254
+goal_position(position) : 모터의 포지션 설정. Multiturn모드와 Joint모드에서 사용가능
+			  값 0~4095 중앙값 2048, 1유닛당 0.088도, 값이 2048보다 작으면 반시계방향
+			  크면 시계방향
+------------------------------------			  
+일반 함수 리스트
+//수정중
+
+-------------------------
+set_acceleartion [0~254]
+led (0 or 1)
+movingspeed_cw , movingspeed_ccw [0~1023]
+set_torque_limit [0~1023]
+goal_position[0,4095]->Joint모드 (2048이 중앙)
+goal_position[-28672,28672]->Multiturn모드(0이 중앙)
+sync_movingspeed_ccw(속도,모터아이디(여러개)) 
+sync_movingspeed_cw(속도,모터아이디(여러개))
+
