@@ -1,6 +1,6 @@
 # This code is for Dynamixel MX-64 motor using protocol 1.0
 
-import os,time
+import os
 from pickle import PROTO
 if os.name == 'nt':
     import msvcrt
